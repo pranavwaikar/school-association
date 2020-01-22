@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200122161747) do
+ActiveRecord::Schema.define(version: 20200122174929) do
 
   create_table "classrooms", force: :cascade do |t|
     t.string   "location"
@@ -20,6 +20,26 @@ ActiveRecord::Schema.define(version: 20200122161747) do
     t.datetime "updated_at", null: false
     t.integer  "school_id"
   end
+
+  create_table "laptops", force: :cascade do |t|
+    t.string   "brand"
+    t.string   "model"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "student_id"
+  end
+
+  create_table "periods", force: :cascade do |t|
+    t.string   "starts_at"
+    t.string   "ends_at"
+    t.integer  "teacher_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "periods", ["student_id"], name: "index_periods_on_student_id"
+  add_index "periods", ["teacher_id"], name: "index_periods_on_teacher_id"
 
   create_table "schools", force: :cascade do |t|
     t.string   "name"

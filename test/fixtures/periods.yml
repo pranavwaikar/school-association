@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  starts_at: MyString
+  ends_at: MyString
+  teacher_id: 
+  student_id: 
+
+two:
+  starts_at: MyString
+  ends_at: MyString
+  teacher_id: 
+  student_id: 
